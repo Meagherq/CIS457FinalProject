@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 import java.net.UnknownHostException;
-
-import javax.swing.table.*;
 import java.util.*;
 import java.awt.event.*;
 import java.text.DecimalFormat;
@@ -135,7 +133,7 @@ public class VoipGUI extends JFrame implements ActionListener {
 
         viewArea = new JPanel(new GridBagLayout());
         viewArea.setPreferredSize(new Dimension(1000, 500));
-        border = new TitledBorder("Audio File Display");
+        border = new TitledBorder("Audio Options");
         border.setBorder(new LineBorder(Color.BLACK, 3));
         border.setTitleFont(new Font("Arial", Font.BOLD, 20));
         border.setTitleJustification(TitledBorder.CENTER);
@@ -268,7 +266,7 @@ public class VoipGUI extends JFrame implements ActionListener {
         }
         position = makeConstraints(0, 0, 1, 1, GridBagConstraints.LINE_START);
         position.insets = new Insets(10, 0, 0, 0);
-        optionsPanel.add(stop, position);
+        //optionsPanel.add(stop, position);
 
         record = new JButton();
         try {
@@ -281,7 +279,7 @@ public class VoipGUI extends JFrame implements ActionListener {
         }
         position = makeConstraints(1, 0, 1, 1, GridBagConstraints.LINE_START);
         position.insets = new Insets(10, 150, 0, 0);
-        optionsPanel.add(record, position);
+        //optionsPanel.add(record, position);
 
         sendAudio = new JButton();
         try {
@@ -294,7 +292,7 @@ public class VoipGUI extends JFrame implements ActionListener {
         }
         position = makeConstraints(2, 0, 1, 1, GridBagConstraints.LINE_START);
         position.insets = new Insets(10, 150, 0, 0);
-        optionsPanel.add(sendAudio, position);
+        //optionsPanel.add(sendAudio, position);
 
         // create and add menu items
         menu = new JMenuBar();
@@ -391,13 +389,13 @@ public class VoipGUI extends JFrame implements ActionListener {
                 //serverTwo.captureAudio();
                 //serverTwo.main(new String[0]);
             } catch (HeadlessException e1) {
-                // TODO Auto-generated catch block
+                // Auto-generated catch block
                 e1.printStackTrace();
             } catch (UnknownHostException e1) {
-                // TODO Auto-generated catch block
+                // Auto-generated catch block
                 e1.printStackTrace();
             } catch (LineUnavailableException e1) {
-                // TODO Auto-generated catch block
+                // Auto-generated catch block
                 e1.printStackTrace();
             }
                 }
@@ -414,12 +412,6 @@ public class VoipGUI extends JFrame implements ActionListener {
             }
         };
         thread.start();
-        
-        
-        
-        
-        //meTwo.main(new String[0]);
-
 }
     }
 
@@ -482,8 +474,7 @@ public class VoipGUI extends JFrame implements ActionListener {
         rtn.gridx = x;
         rtn.gridy = y;
         rtn.gridheight = h;
-        rtn.gridwidth = w;
-
+        rtn.gridwidth = w;        
         rtn.anchor = align;
         return rtn;
     }
